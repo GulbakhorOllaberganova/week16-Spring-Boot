@@ -15,7 +15,7 @@ import com.promineotech.jeep.entity.Jeep;
 import com.promineotech.jeep.entity.JeepModel;
 import lombok.extern.slf4j.Slf4j;
 
-@Service
+
 @Component
 @Slf4j
 

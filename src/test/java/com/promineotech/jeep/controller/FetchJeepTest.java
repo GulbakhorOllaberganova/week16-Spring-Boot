@@ -29,7 +29,8 @@ import lombok.Getter;
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
 @Sql(scripts = {"classpath:flyway/migrations/V1.0__Jeep_Schema.sql", 
-    "classpath:flyway/migrations/V1.1__Jeep_Data.sql"}, config = @SqlConfig(encoding = "utf-8"))
+    "classpath:flyway/migrations/V1.1__Jeep_Data.sql"}, 
+config = @SqlConfig(encoding = "utf-8"))
 
 
 class FetchJeepTest {
