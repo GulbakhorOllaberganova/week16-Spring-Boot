@@ -3,7 +3,6 @@
  */
 package com.promineotech.jeep.controller;
 
-
 import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +19,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
-import org.springframework.test.jdbc.JdbcTestUtils;
 import com.promineotech.jeep.controller.support.CreateOrderTestSupport;
 import com.promineotech.jeep.entity.JeepModel;
 import com.promineotech.jeep.entity.Order;
-
+import lombok.Getter;
 
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -37,6 +35,7 @@ class CreateOrderTest extends CreateOrderTestSupport{
  @LocalServerPort 
  private int serverPort;
   @Autowired 
+  @Getter
   private JdbcTemplate jdbcTemplate;
   
 
@@ -44,6 +43,7 @@ class CreateOrderTest extends CreateOrderTestSupport{
   void testCreateOrderReturnsSuccess201() {
     String body = createOrderBody();
     String uri = getBaseUriForOrders();
+    //String uri = String.format("http://localhost:%d/orders", serverPort);
     
    // int numRowsOrders = JdbcTestUtils.countRowsInTable(jdbcTemplate, "orders");
    // int numRowsOptions = JdbcTestUtils.countRowsInTable(jdbcTemplate, "order_options");

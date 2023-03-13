@@ -29,10 +29,11 @@ import com.promineotech.jeep.entity.Option;
 import com.promineotech.jeep.entity.OptionType;
 import com.promineotech.jeep.entity.Order;
 import com.promineotech.jeep.entity.Tire;
+import lombok.extern.slf4j.Slf4j;
 
 
  @Component
- 
+ @Slf4j
 public class DefaultJeepOrderDao implements JeepOrderDao {
  
 
@@ -75,6 +76,9 @@ public Order saveOrder(Customer customer, Jeep jeep, Color color, Engine engine,
 private void saveOptions(List<Option> options, Long orderPK) {
   for(Option option : options) {
     SqlParams params = generateInsertSql(option, orderPK);
+    jdbcTemplate.update(params.sql, params.source);
+    
+    
   }
   
 }

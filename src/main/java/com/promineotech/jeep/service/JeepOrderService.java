@@ -12,6 +12,6 @@ public interface JeepOrderService {
    * @param orderRequest
    * @return
    */
-  Order createOrder(OrderRequest orderRequest);
+ public Order createOrder(OrderRequest orderRequest);
 
 }

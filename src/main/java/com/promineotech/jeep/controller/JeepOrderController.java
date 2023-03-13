@@ -18,13 +18,13 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.servers.Server;
 
 @Validated
-public interface JeepOrderController {
+
   @RequestMapping("/orders")
   @OpenAPIDefinition(info = @Info(title = "Jeep Order Service"), servers = {
       @Server(url = "http://localhost:8080", description = "Local server.")})
 
-
-  public interface JeepSalesController {
+public interface JeepOrderController {
+ 
     // @formatter:off
     @Operation(
         summary = "Create an order for a Jeep",
@@ -51,7 +51,7 @@ public interface JeepOrderController {
             },
         parameters = {
             @Parameter(name = "orderRequest",
-                allowEmptyValue = false, 
+               // allowEmptyValue = false, 
                 required = true, 
                 description = "The order as JSON")
             }
@@ -64,12 +64,4 @@ public interface JeepOrderController {
    //@formatter:on
   }
 
-  /**
-   * @param orderRequest
-   * @return
-   */
-  
-  @PostMapping
-  @ResponseStatus(code = HttpStatus.CREATED)
-  Order createOrder(@RequestBody OrderRequest orderRequest); 
-}
+

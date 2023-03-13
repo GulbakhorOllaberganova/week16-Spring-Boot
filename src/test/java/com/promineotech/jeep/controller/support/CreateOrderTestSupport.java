@@ -5,7 +5,10 @@ package com.promineotech.jeep.controller.support;
 
 
 public class CreateOrderTestSupport extends BaseTest {
-  
+ /**
+  *  
+  * @return
+  */
   protected String createOrderBody() {
     //@formatter:off
     return "{\n"
@@ -27,5 +30,4 @@ public class CreateOrderTestSupport extends BaseTest {
     + "}";
     //@formatter:on
   }
-
 }
